@@ -10,5 +10,5 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split("\n")
   gem.name          = 'georeference'
   gem.require_paths = ['lib']
-  gem.version       = GeoReference::VERSION
+  gem.version       = Geo::VERSION
 end
