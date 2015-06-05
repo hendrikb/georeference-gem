@@ -20,8 +20,8 @@ module Geo
       }
     end
 
-    def to_json
-      to_hash.to_json
+    def to_json(state = nil)
+      to_hash.to_json(state)
     end
   end
 end
