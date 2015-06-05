@@ -4,11 +4,11 @@ module Geo
     # source itself (predefined, like "dbpedia") and a likert scale like
     # estimation of the source's trustworthiness
     class Source
-      attr_value_initialize :source_id, :trustworthiness
+      attr_value_initialize :identifier, :trustworthiness
 
       def to_hash
         {
-          source_id: source_id,
+          identifier: identifier,
           trustworthiness: trustworthiness
         }
       end

@@ -6,10 +6,10 @@ module Geo
         Geo::Discovery::Source.new('dbp', 4)
       }
       let(:proof) {
-        { source_id: 'dbp', trustworthiness: 4 }
+        { identifier: 'dbp', trustworthiness: 4 }
       }
       context 'accessor' do
-        it { should respond_to :source_id }
+        it { should respond_to :identifier }
         it { should respond_to :trustworthiness }
       end
       context 'instance method' do
