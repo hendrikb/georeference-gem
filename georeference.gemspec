@@ -11,4 +11,6 @@ Gem::Specification.new do |gem|
   gem.name          = 'georeference'
   gem.require_paths = ['lib']
   gem.version       = Geo::VERSION
+
+  gem.add_runtime_dependency 'attr_extras'
 end
