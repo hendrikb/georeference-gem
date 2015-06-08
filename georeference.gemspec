@@ -1,5 +1,3 @@
-require File.expand_path('../lib/geo', __FILE__)
-
 Gem::Specification.new do |gem|
   gem.authors       = ['Hendrik Bergunde']
   gem.email         = ['hbergunde@gmx.de']
@@ -10,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split("\n")
   gem.name          = 'georeference'
   gem.require_paths = ['lib']
-  gem.version       = Geo::VERSION
+  gem.version       = '0.1'
 
   gem.add_runtime_dependency 'attr_extras'
 end
