@@ -1,5 +1,14 @@
-# type "make" command in Unix to create asme2ej.pdf file 
+# type "make" command in Unix to create the documentation
 all:
+	latex paper
+	bibtex paper
+	latex paper
+	latex paper
+	dvips -o paper.ps paper
+	ps2pdf paper.ps paper.pdf
+
+# type "make asme2ej" command in Unix to create the asme2ej template example
+asme2ej:
 	latex asme2ej
 	bibtex asme2ej
 	latex asme2ej
