@@ -1,6 +1,29 @@
-Abstract
+\documentclass[twocolumn,10pt]{asme2ej}
+\usepackage{epsfig} %% for loading postscript figures
+\title{} 
+%%% first author
+\author{Hendrik Bergunde
+    \affiliation{
+	Masterstudent, Freie Universität Berlin\\
+    Email: hendrik.bergunde@fu-berlin.de
+    }	
+}
+%%% second author
+\author{Frank Zechert
+    \affiliation{
+	Masterstudent, Freie Universität Berlin\\
+    Email: frank.zechert@fu-berlin.de
+    }	
+}
+\begin{document}
 
-Motivation & Ziele
+\maketitle    
+
+\begin{abstract}
+{\it Abstract}
+\end{abstract}
+
+Motivation \& Ziele
   Georeferenzen aus verschiedenen Systemumgebungen abbildbar, vergleichbar, zusammenführbar machen
   Dazu Vertrauen und Genauigkeit (Qualitätskriterien?) ausdrücken
   
@@ -9,13 +32,13 @@ Entity Relation Model
 
   Beschreibung der einzelnen Entitäten
     Referenz (nur "Rahmen")
-    OSM-Location (node_id und OSM Layer Verlinkung)
+    OSM-Location (node\_id und OSM Layer Verlinkung)
     Discovery (Rahmen für S und T)
     Discovery::Locator (URL, byteindex)
         "url": http://wikipedia.org/JebBush
-        "byte_offset": 12345 % optional
+        "byte\_offset": 12345 % optional
         "timestamp": ...
-        "proof": { payload_base64: "...", mimetype: 'text/html' }
+        "proof": { payload\_base64: "...", mimetype: "text/html" }
     Discovery::Source
     Discovery::Time
 
@@ -31,3 +54,6 @@ Entity Relation Model
   OSM (-> schnell bei XML) % http://wiki.openstreetmap.org/wiki/Node
   JSON
 
+\bibliographystyle{asmems4}
+\bibliography{paper}
+\end{document}
