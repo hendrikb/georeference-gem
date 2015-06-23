@@ -1,7 +1,7 @@
 # type "make" command in Unix to create the documentation
 all:
 	latex paper
-	bibtex paper
+# 	bibtex paper
 	latex paper
 	latex paper
 	dvips -o paper.ps paper
