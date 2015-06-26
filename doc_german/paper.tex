@@ -24,40 +24,10 @@
 {\it Akteure, zum Beispiel Firmen oder Personen, sind im Zeitraum ihres Lebens oder ihrer Existenz an unterschiedlichen Orten aktiv. Möchte man diese Akteure mit Hilfe von verschiedenen Techniken und Programmen lokalisieren, benötigt man ein einheitliches Datenmodell, in dem die Ergebnisse repräsentiert werden. Nur dann ist es möglich die verschiedenen Ergebnisse zu vereinigen und gemeinsam auszuwerten. In diesem Paper stellen wir ein Datenmodell für diesen Zweck vor, welches auf der einen Seite allgemein genug ist, um unabhängig von der verwendeten Technik zu sein, und auf der anderen Seite die Ergebnisse trotzdem mit wichtigen Qualitätsmerkmalen ausstattet.}
 \end{abstract}
 
-\section{Motivation und Ziele}
-Motivation \& Ziele
-  Georeferenzen aus verschiedenen Systemumgebungen abbildbar, vergleichbar, zusammenführbar machen
-  Dazu Vertrauen und Genauigkeit (Qualitätskriterien?) ausdrücken
-  
-\section{Probleme}
-"Probleme"
-Warum zB Likertskalen? 
-Rückverfolgbarkeit der Treffer (Quellenangabe?)
-
-\section{Assoziierte Technologien}
-"Assoziierte" Technologien 
-OSM (-> schnell bei XML) % http://wiki.openstreetmap.org/wiki/Node
-JSON
-
-\section{Datenmodell}
-
-Entity Relation Model
-
-  Beschreibung der einzelnen Entitäten
-    Referenz (nur "Rahmen")
-    OSM-Location (node\_id und OSM Layer Verlinkung)
-    Discovery (Rahmen für S und T)
-    Discovery::Locator (URL, byteindex)
-        "url": http://wikipedia.org/JebBush
-        "byte\_offset": 12345 % optional
-        "timestamp": ...
-        "proof": { payload\_base64: "...", mimetype: "text/html" }
-    Discovery::Source
-    Discovery::Time
-
-    Begründung Existenz anwendungsspezifische Felder überall (optionals) als K/V in das jeweilige Objekt reingehängt
-
-  Festlegen der Skalen (TW)
+\input{motivation.tex}
+\input{problems.tex}
+\input{technologies.tex}
+\input{model.tex}
 
 
 

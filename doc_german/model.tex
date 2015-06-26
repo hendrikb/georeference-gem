@@ -1,0 +1,19 @@
+\section{Datenmodell}
+
+Entity Relation Model
+
+  Beschreibung der einzelnen Entitäten
+    Referenz (nur "Rahmen")
+    OSM-Location (node\_id und OSM Layer Verlinkung)
+    Discovery (Rahmen für S und T)
+    Discovery::Locator (URL, byteindex)
+        "url": http://wikipedia.org/JebBush
+        "byte\_offset": 12345 % optional
+        "timestamp": ...
+        "proof": { payload\_base64: "...", mimetype: "text/html" }
+    Discovery::Source
+    Discovery::Time
+
+    Begründung Existenz anwendungsspezifische Felder überall (optionals) als K/V in das jeweilige Objekt reingehängt
+
+  Festlegen der Skalen (TW)
