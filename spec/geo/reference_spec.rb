@@ -9,7 +9,7 @@ module Geo
 
     let(:proof) do
       {
-        test_location.id => {
+        test_location.node_id => {
           human_readable_name: test_location.human_readable_name,
           administrative_level: test_location.administrative_level,
           discoveries: test_discoveries

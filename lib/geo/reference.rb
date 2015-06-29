@@ -12,7 +12,7 @@ module Geo
 
     def to_hash
       {
-        location.id => {
+        location.node_id => {
           human_readable_name: location.human_readable_name,
           administrative_level: location.administrative_level,
           discoveries: discoveries
