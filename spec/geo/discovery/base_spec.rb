@@ -2,14 +2,16 @@ require 'spec_helper'
 module Geo
   module Discovery
     describe Base do
-      context 'without additional fields' do
-        subject {
-          Geo::Discovery::Base.new('source def', 'time def')
-        }
+      [
+        {subject: Geo::Discovery::Base.new('s', 't', {}),
+         proof:{ source: 's', time: 't' } },
+        {subject: Geo::Discovery::Base.new('s', 't', { foo: "bar", baz: "oink"} ),
+         proof:{ source: 's', time: 't',  foo: "bar", baz: "oink" } }
+      ].each do |fixture|
 
-        let(:proof) {
-          { source: 'source def', time: 'time def' }
-        }
+        subject { fixture[:subject] }
+        let (:proof) { fixture[:proof] }
+
         context 'accessor' do
           it { should respond_to :source }
           it { should respond_to :time }
