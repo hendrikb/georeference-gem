@@ -36,7 +36,7 @@ module Geo
             end
           end
         end
+      end
     end
-  end
   end
 end
