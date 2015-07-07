@@ -4,41 +4,45 @@
 Die Datenstruktur kann in einem einfach gehaltenen \textit{UML-Klassendiagramm} dargestellt werden. Im Wesentlichen enthält  die Basis-Entität \texttt{Reference}  grundlegendene Container-Attribute, die wiederum mit Informationen angereichert wurden. Die Datenstruktur wird in diesem Kapitel kurz erläutert.
 
 \tikzumlset{fill class=red!20, fill template=violet!10, font=\tiny} 
-\begin{tikzpicture} 
-  \begin{umlpackage}[x=0,y=0]{Geo} 
-    \umlclass[x=0,y=9]{Reference}{ 
-      + location : Geo::OSM::Location \\ + discoveries : Geo::Discovery::Base[] \\ + additional\_fields : String[][]
-      }{} 
-      \begin{umlpackage}[x=4,y=8.1]{OSM} 
-        \umlclass[x=0,y=0]{Location}{}{
-          + node\_id : int \\ + human\_readable\_name : String  \\ + administrative\_level : int \\ + additional\_fields : String[][]
-        }
-      \end{umlpackage}
-      \begin{umlpackage}[x=0,y=0]{Discovery} 
-        \umlclass[x=1.5,y=5.6]{Base}{ 
-          + source : Source \\ + time : Time  \\ + locator : Locator \\ + additional\_fields : String[][]
-          }{} 
-        \umlclass[x=0,y=2]{Source}{ 
-          + identifier : String \\ + trustworthiness : int  \\ + additional\_fields : String[][]
-          }{} 
-        \umlclass[x=3,y=2]{Time}{ 
-          + representation : String \\ + estimated\_precision : int  \\ + additional\_fields : String[][]
-          }{} 
-        \umlclass[x=1.5,y=-0.45]{Locator}{ 
-          + url : String \\ + byte\_offset : int  \\ + timestamp : DateTime \\ + proof : String \\ + additional\_fields : String[][]
-          }{} 
-      \end{umlpackage} 
-  \end{umlpackage} 
-  \umlunicompo[pos1=-0.1,arg1=location,mult1=1,mult2=1,pos2=0.95]{Reference}{Location} 
-  \umluniaggreg[arg1=discoveries,mult1=1,mult2=*,pos2=0.8]{Reference}{Base} 
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture} 
+    \begin{umlpackage}[x=0,y=0]{Geo} 
+      \umlclass[x=0,y=9]{Reference}{ 
+        + location : Geo::OSM::Location \\ + discoveries : Geo::Discovery::Base[] \\ + additional\_fields : String[][]
+        }{} 
+        \begin{umlpackage}[x=4,y=8.1]{OSM} 
+          \umlclass[x=0,y=0]{Location}{}{
+            + node\_id : int \\ + human\_readable\_name : String  \\ + administrative\_level : int \\ + additional\_fields : String[][]
+          }
+        \end{umlpackage}
+        \begin{umlpackage}[x=0,y=0]{Discovery} 
+          \umlclass[x=1.5,y=5.6]{Base}{ 
+            + source : Source \\ + time : Time  \\ + locator : Locator \\ + additional\_fields : String[][]
+            }{} 
+          \umlclass[x=0,y=2]{Source}{ 
+            + identifier : String \\ + trustworthiness : int  \\ + additional\_fields : String[][]
+            }{} 
+          \umlclass[x=3,y=2]{Time}{ 
+            + representation : String \\ + estimated\_precision : int  \\ + additional\_fields : String[][]
+            }{} 
+          \umlclass[x=1.5,y=-0.45]{Locator}{ 
+            + url : String \\ + byte\_offset : int  \\ + timestamp : DateTime \\ + proof : String \\ + additional\_fields : String[][]
+            }{} 
+        \end{umlpackage} 
+    \end{umlpackage} 
+    \umlunicompo[pos1=-0.1,arg1=location,mult1=1,mult2=1,pos2=0.95]{Reference}{Location} 
+    \umluniaggreg[arg1=discoveries,mult1=1,mult2=*,pos2=0.8]{Reference}{Base} 
 
-  \umlunicompo[arg1=source,pos1=0.4, mult2=1,pos2=0.8]{Base}{Source} 
-  \umlunicompo[arg1=locator, pos1=0.185, mult2=1,pos2=0.95]{Base}{Locator} 
-  \umlunicompo[arg1=time, pos1=0.2, mult2=1,pos2=0.8]{Base}{Time} 
-\end{tikzpicture}
+    \umlunicompo[arg1=source,pos1=0.4, mult2=1,pos2=0.8]{Base}{Source} 
+    \umlunicompo[arg1=locator, pos1=0.185, mult2=1,pos2=0.95]{Base}{Locator} 
+    \umlunicompo[arg1=time, pos1=0.2, mult2=1,pos2=0.8]{Base}{Time} 
+  \end{tikzpicture}
+\caption{UML-Klassendiagramm der Datenstruktur}
+\end{figure}
 
 \subsection{Reference-Containerklasse}
-Den übergeordneten Datencontainer bildet die \texttt{Reference}-Klasse, sie hält zwei Attribute: Das \texttt{location}-Attribut hält eine Instanz der \texttt{OSM::Location}-Klasse, das \texttt{discoveries}-Attribut hält eine Liste von \texttt{Discovery}-Instanzen vor. Eine Georeferenz, also eine Instanz der hier beschriebenen  \texttt{Reference}-Klasse, liefert dementsprechend einen Verweis auf einen geografischen, real existierenden Ort auf der Welt und eine Liste von Hinweisen, wie und wo diese Referenz durch etwaige Suchalgorithmen gefunden und in den entsprechend referenziert wurde.
+Den übergeordneten Datencontainer bildet die \texttt{Reference}-Klasse, sie hält zwei Attribute: Das \texttt{location}-Attribut beinhaltet eine Instanz der \texttt{OSM::Location}-Klasse, das \texttt{discoveries}-Attribut hält eine Liste von \texttt{Discovery}-Instanzen vor. Eine Georeferenz, also eine Instanz der hier beschriebenen \texttt{Reference}-Klasse, liefert dementsprechend einen Verweis auf einen geografisch real existierenden Ort auf der Welt und eine Liste von Hinweisen, wie und wo diese Referenz durch etwaige Suchalgorithmen gefunden und in den entsprechend referenziert wurde.
 
 \subsection{OpenStreetMaps basierte Georeferenz}
 Die \texttt{OSM::Location}-Instanz stellt eine stark vereinfachte Abstraktion einer OpenStreetMaps \texttt{Node}\cite{OSMnode} dar. Im OpenStreetMaps-Datenmodell repräsentieren Nodes einen distinkten Punkt, der innerhalb von OpenStreetMaps einzigartig ist und mit Positionsdaten versehen ist. In unserem Datenmodell sind die exakten Geokoordinaten nicht von essentieller Wichtigkeit (weil der Fokus eher auf Städten, Regionen oder Ländern liegt, wichtig ist uns die Bennenbarkeit eines Ortes, nicht die Lage), daher persistieren wir in der \texttt{OSM::Location}-Instanz lediglich die \texttt{node\_id}, einen menschenlesbaren Namen (Attribut \texttt{human\_readable\_name}) und den \textit{Administration-Level}-Wert von OpenStreetMaps\cite{OSMadminlevel} (Attribut \texttt{administrative\_level}). Mit dieser Angabe kann bestimmt werden, ob es sich bei der benannten Georeferenz etwa um einen Kontinent, einen Staat, ein Bundesland oder eine Stadt handelt.
