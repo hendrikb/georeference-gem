@@ -1,5 +1,9 @@
-\section{Assoziierte Technologien}
+\section{Technologien}
 \label{technologies}
-"Assoziierte" Technologien 
-OSM (-> schnell bei XML) % http://wiki.openstreetmap.org/wiki/Node
-JSON
+Es liegt nahe, für die beschriebene Datenstruktur Schnittstellen bereitzustellen und bestehende Technologien zu verwenden, die den Gebrauch des Ganzen möglichst effizient und komfortabel gestalten und unterstützen. Hier soll kurz beschrieben werden, welche technischen Herangehensweisen in der Verwendung der genannten Datenstruktur sinnvoll erscheinen.
+
+Es ist häufig von geografischen Referenzen die Rede, daher ist es sinnvoll, bestehende Geodatenbanken wie OpenStreetMaps zu verwenden, um Geo-Locations referenzieren zu können. Die Datenstruktur bedient sich, wie oben bereits erwähnt, einiger aus OpenStreetMaps entlehnter Konzepte, die direkt auf das sehr umfangreiche und freie Kartenprojekt abgebildet werden können. OpenStreetMaps selbst basiert zum überwiegenden Teil auf XML-Formaten, was die Verzahnung mit weiteren Webprojekten noch weiter vereinfachen kann.
+
+Die Referenzimplementierung der Datenstruktur liegt in Ruby vor. Ruby ist eine Programmiersprache, die neben ihrem Duck-Typing-Konzept auch für leistungsfähige Zeichenkettenverarbeitungverarbeitung bekannt ist. Beide Konzepte werden dann nützlich, wenn unterschiedlichste textbasierte Datenquellen eingelesen, verarbeitet und zu einer Datenkomponente zusammengefasst werden sollen. Die Offenheit der Implementierung kann vorteilhaft sein, wenn Attribute oder standardisierte Methoden nachgefügt werden sollen. Dies ist beispielsweise auch dann der Fall, wenn zukünftig \textit{Reference}-Instanzen über Anwendungsprogrammierungsschnittstellen (\textit{API}s) weitergegeben werden sollen.
+
+Als einzige wichtige standardisierte Methode auf dem Datentyp ist derzeit die \texttt{to\_json}-Methode, die die Felder aller Strukturen und Unterstrukturen in Javascript Object Notation\cite{jsonspec} zurück gibt. Dies ist sehr sinnvoll, für den Fall, dass Instanzen dieser Datenstrukturen typischerweise über \textit{Web-API}s geliefert werden sollen. Für die Heuristiken - als theoretisches Konstrukt, die diese Datenstrukturen bereitstellen - ist \texttt{to\_json} aber gewiss ohne Relevanz, findet sich aber beispielsweise in der Referenzimplementierung.
