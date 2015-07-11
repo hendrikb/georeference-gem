@@ -1,4 +1,7 @@
 \section{Motivation und Ziele}
-Motivation \& Ziele
-  Georeferenzen aus verschiedenen Systemumgebungen abbildbar, vergleichbar, zusammenführbar machen
-  Dazu Vertrauen und Genauigkeit (Qualitätskriterien?) ausdrücken
+
+Die Geolokalisierung von Akteuren mit Hilfe von Daten aus dem Internet kann auf verschiedenste Weise maschinell oder händisch durchgeführt werden. Ziel dabei ist immer die extraktion von Informationen, die auf den Aufenthaltsort des Akteurs hinweise geben. Wenn verschiedene Systeme und Verfahren mit dieser Aufgabe betraut werden, dann benötigt man ein einheitliches Datenformat für die im Ergebnis gefundenen Georeferenzen. Denn möchte man auf einer möglichst vollständigen Datenmenge an Georeferenzen arbeiten, muss man die Ergebnisse von verschiedenen Methoden zusammenführen und miteinander vergleichen können.
+
+Wie genau verschiedene Ergebnisse miteinander verglichen oder zusammengeführt werden, muss hierbei jedoch immer vom Anwendungsfall abhängen. Je nach Anwendungsfall kann sich das Interesse an unterschiedlichen Qualitätskriterien der Ergebnisse stark unterscheiden. Wir wollen daher eine Datenstruktur erstellen, die mögliche Qualitätskriterien in den Ergebnissen vorhält, aber die Ergebnisse noch nicht nach diesen Kriterien wertet.
+
+Die allgemeingültigen Qualitätskriterien für Ergebnisse aus einer Informationsrecherche im Internet nach Georeferenzen sind in unserem Fall das Vertrauen zur Informationsquelle (Korrektheit der Information) und die Genauigkeit der Information. Letztere  unterteilt sich bezogen auf Georeferenzen in die Genauigkeit einer Ortsangabe (``Wo?'') und die Genauigkeit einer zeitlichen Angabe (``Wann?'').
