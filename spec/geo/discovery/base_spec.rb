@@ -3,10 +3,10 @@ module Geo
   module Discovery
     describe Base do
       [
-        {subject: Geo::Discovery::Base.new('s', 't', {}),
-         proof:{ source: 's', time: 't' } },
-        {subject: Geo::Discovery::Base.new('s', 't', { foo: "bar", baz: "oink"} ),
-         proof:{ source: 's', time: 't',  foo: "bar", baz: "oink" } }
+        {subject: Geo::Discovery::Base.new('s', 't', {}, {}),
+         proof:{ source: 's', time: 't', locator: {} } },
+        {subject: Geo::Discovery::Base.new('s', 't', {}, { foo: "bar", baz: "oink"} ),
+         proof:{ source: 's', time: 't', locator: {}, foo: "bar", baz: "oink" } }
       ].each do |fixture|
 
         subject { fixture[:subject] }
