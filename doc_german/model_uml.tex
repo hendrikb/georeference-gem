@@ -1,37 +1,37 @@
-\tikzumlset{fill class=red!20, fill template=violet!10, font=\tiny} 
+\tikzumlset{fill class=red!20, fill template=violet!10, font=\small} 
 \begin{figure}[H]
   \centering
   \begin{tikzpicture} 
     \begin{umlpackage}[x=0,y=0]{Geo} 
-      \umlclass[x=0,y=9]{Reference}{ 
+      \umlclass[x=0,y=10]{Reference}{ 
         + location : Geo::OSM::Location \\ + discoveries : Geo::Discovery::Base[] \\ + additional\_fields : String[][]
         }{} 
-        \begin{umlpackage}[x=4,y=8.1]{OSM} 
+        \begin{umlpackage}[x=3.2,y=5.4]{OSM} 
           \umlclass[x=0,y=0]{Location}{}{
             + node\_id : int \\ + human\_readable\_name : String  \\ + administrative\_level : int \\ + additional\_fields : String[][]
           }
         \end{umlpackage}
-        \begin{umlpackage}[x=0,y=0]{Discovery} 
-          \umlclass[x=1.5,y=5.6]{Base}{ 
+        \begin{umlpackage}[x=0,y=-7.2]{Discovery} 
+          \umlclass[x=0,y=5.6]{Base}{ 
             + source : Source \\ + time : Time  \\ + locator : Locator \\ + additional\_fields : String[][]
             }{} 
-          \umlclass[x=0,y=2]{Source}{ 
+          \umlclass[x=-1,y=2]{Source}{ 
             + identifier : String \\ + trustworthiness : int  \\ + additional\_fields : String[][]
             }{} 
-          \umlclass[x=3,y=2]{Time}{ 
+          \umlclass[x=3.6,y=2]{Time}{ 
             + representation : String \\ + estimated\_precision : int  \\ + additional\_fields : String[][]
             }{} 
-          \umlclass[x=1.5,y=-0.45]{Locator}{ 
+          \umlclass[x=3.1,y=9]{Locator}{ 
             + url : String \\ + byte\_offset : int  \\ + timestamp : DateTime \\ + proof : String \\ + additional\_fields : String[][]
             }{} 
         \end{umlpackage} 
     \end{umlpackage} 
-    \umlunicompo[pos1=-0.1,arg1=location,mult1=1,mult2=1,pos2=0.95]{Reference}{Location} 
-    \umluniaggreg[arg1=discoveries,mult1=1,mult2=*,pos2=0.8]{Reference}{Base} 
+    \umlunicompo[pos1=0.2,arg1=location,mult1=1,mult2=1,pos2=0.72]{Reference}{Location} 
+    \umluniaggreg[pos1=0.1,arg1=discoveries,mult1=1,mult2=*,pos2=0.9]{Reference}{Base} 
 
-    \umlunicompo[arg1=source,pos1=0.4, mult2=1,pos2=0.8]{Base}{Source} 
     \umlunicompo[arg1=locator, pos1=0.185, mult2=1,pos2=0.95]{Base}{Locator} 
-    \umlunicompo[arg1=time, pos1=0.2, mult2=1,pos2=0.8]{Base}{Time} 
+    \umlunicompo[arg1=source,pos1=0.2, mult2=1,pos2=0.8]{Base}{Source} 
+    \umlunicompo[arg1=time, pos1=0.4, mult2=1,pos2=0.6]{Base}{Time} 
   \end{tikzpicture}
 \caption{UML-Klassendiagramm der Datenstruktur}
 \end{figure}
