@@ -3,10 +3,10 @@ module Geo
   module Discovery
     describe Source do
       subject{
-        Geo::Discovery::Source.new('dbp', 4)
+        Geo::Discovery::Source.new('dbp', 4, foo: 'bar')
       }
       let(:proof) {
-        { identifier: 'dbp', trustworthiness: 4 }
+        { identifier: 'dbp', trustworthiness: 4, foo: 'bar' }
       }
       context 'accessor' do
         it { should respond_to :identifier }
