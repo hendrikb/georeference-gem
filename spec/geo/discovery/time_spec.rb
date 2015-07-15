@@ -3,10 +3,10 @@ module Geo
   module Discovery
     describe Time do
       subject{
-        Geo::Discovery::Time.new('90ies', 2)
+        Geo::Discovery::Time.new('90ies', 2, {additional: 'field'})
       }
       let(:proof) {
-        { representation: '90ies', estimated_precision: 2 }
+        { representation: '90ies', estimated_precision: 2, additional: 'field' }
       }
       context 'accessor' do
         it { should respond_to :representation }
