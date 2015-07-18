@@ -1,8 +1,10 @@
 *.aux
 *.bbl
+*.bcf
 *.blg
 *.dvi
 *.log
 *.pdf
 *.ps
+*.run.xml
 *.synctex.gz
