@@ -33,11 +33,11 @@ Die \texttt{Reference}-Klasse enthält wie erwähnt eine Liste von \texttt{Disco
 Die \texttt{Discovery::Source}-Klasse ist ein Container für zwei Attribute: Zum einen hält ein \texttt{identifier} eine Referenz auf eine konkrete Datenquelle vor, beispielsweise \textit{dbp} für DBpedia. Zum anderen hält der \texttt{trustworthiness}-Wert eine Einschätzung für die Zuverlässigkeit der Quelle vor. Beide Attribute ergeben sich aus dem Anwendungsfall und müssen pro Anwendung konfigurierbar gehalten sein. Der \texttt{trustworthiness}-Wert enthält Werte einer Likert-Skala (von ``Sehr vertrauenswürdig'' bis ``Nicht vertrauenswürdig''), intern könnten die Werte dieser Skala auf Ganzzahlen (oder Enumeration-Werte) abgebildet werden, allerdings verbietet sich das Rechnen auf Likert-Skalen aus den auf Seite \pageref{calc_likert} genannten Gründen. Die Likert-Skala für die Zuverlässigkeit einer Skala legen wir wie folgt in absteigender Reihenfolge fest:
 
 \begin{enumerate}
+  \item verbindlich (authoritative)
   \item sehr vertrauenswürdig (very trustworthy)
   \item vertrauenswürdig (trustrworthy)
-  \item neutral (neutral)
   \item wenig vertrauenswürdig (less trustworthy)
-  \item nicht vertrauenswürdig (untrustworthy)
+  \item wahrscheinlich falsch (likely to be incorrect)
 \end{enumerate}
 
 \subsubsection{Zeitreferenz: Discovery::Time}
@@ -45,10 +45,10 @@ Die \texttt{Discovery::Time}-Klasse ist ein Container für die beiden Attribute 
 
 \begin{enumerate}
   \item exakte Angabe (exact)
-  \item sehr präzise Angabe (very precise)
   \item präzise Angabe (precise)
+  \item angemessene Angabe (fair)
   \item grobe Angabe (coarse)
-  \item ungenaue Angabe (inaccurate)
+  \item ungenaue Angabe (very coarse)
 \end{enumerate}
 
 \subsubsection{Spezifizierung der Fundstelle: Discovery::Locator}
