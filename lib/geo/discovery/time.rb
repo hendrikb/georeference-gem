@@ -3,6 +3,12 @@ module Geo
     # Represents a certain notion of time and an estimation how precise this
     # notion of time is
     class Time
+      PRECISION_EXACT       = 5
+      PRECISION_PRECISE     = 4
+      PRECISION_FAIR        = 3
+      PRECISION_COARSE      = 2
+      PRECISION_VERY_COARSE = 1
+
       attr_value_initialize :representation, :estimated_precision, 
         :additional_fields
 
