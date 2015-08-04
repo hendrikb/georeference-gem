@@ -4,6 +4,12 @@ module Geo
     # source itself (predefined, like "dbpedia") and a likert scale like
     # estimation of the source's trustworthiness
     class Source
+      TRUSTWORTHINESS_AUTHORITATIVE    = 5
+      TRUSTWORTHINESS_VERY_TRUSTWORTHY = 4
+      TRUSTWORTHINESS_TRUSTWORTHY      = 3
+      TRUSTWORTHINESS_LESS_TRUSTWORTHY = 2
+      TRUSTWORTHINESS_LIKELY_INCORRECT = 1
+
       attr_value_initialize :identifier, :trustworthiness, :additional_fields
 
       def to_hash
