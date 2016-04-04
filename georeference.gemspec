@@ -4,7 +4,7 @@ Gem::Specification.new do |gem|
   gem.description   = 'Gem providing an object representation for geo ' \
                       'references scraped from semantic sources'
   gem.summary       = 'Wrap up for semantically scraped geo references'
-  gem.homepage      = 'https://github.com/hendrikb/georeference'
+  gem.homepage      = 'https://github.com/hendrikb/georeference-gem'
   gem.files         = `git ls-files`.split("\n")
   gem.name          = 'georeference'
   gem.require_paths = ['lib']
