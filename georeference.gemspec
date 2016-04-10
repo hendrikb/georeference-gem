@@ -10,9 +10,9 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = '0.1.1'
 
-  gem.add_development_dependency 'rubocop', '~> 0.31.0'
-  gem.add_development_dependency 'pry', '~> 0.10.1'
-  gem.add_development_dependency 'rspec', '~> 3.2.0'
+  gem.add_development_dependency 'rubocop', '~> 0.39.0'
+  gem.add_development_dependency 'pry', '~> 0.10.3'
+  gem.add_development_dependency 'rspec', '~> 3.4.0'
 
   gem.add_runtime_dependency 'attr_extras', '~> 4.4.0'
 end
