@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split("\n")
   gem.name          = 'georeference'
   gem.require_paths = ['lib']
-  gem.version       = '0.1.1'
+  gem.version       = '0.2.0'
 
   gem.add_development_dependency 'rubocop', '~> 0.39.0'
   gem.add_development_dependency 'pry', '~> 0.10.3'
