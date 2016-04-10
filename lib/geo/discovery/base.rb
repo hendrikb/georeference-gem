@@ -15,7 +15,7 @@ module Geo
           source: source,
           time: time,
           locator: locator
-        }.merge(additionals)
+        }.merge(additionals).delete_if { |_, v| v.nil? }
       end
 
       def to_json(state = nil)

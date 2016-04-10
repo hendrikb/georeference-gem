@@ -6,7 +6,9 @@ module Geo
         {subject: Geo::Discovery::Base.new('s', 't', {}, {}),
          proof:{ source: 's', time: 't', locator: {} } },
         {subject: Geo::Discovery::Base.new('s', 't', {}, { foo: "bar", baz: "oink"} ),
-         proof:{ source: 's', time: 't', locator: {}, foo: "bar", baz: "oink" } }
+         proof:{ source: 's', time: 't', locator: {}, foo: "bar", baz: "oink" } },
+        {subject: Geo::Discovery::Base.new('s', nil, {}, { foo: "bar", baz: "oink"} ),
+         proof:{ source: 's', locator: {}, foo: "bar", baz: "oink" } }
       ].each do |fixture|
 
         subject { fixture[:subject] }
